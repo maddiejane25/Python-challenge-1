@@ -186,7 +186,7 @@ while place_order:
                     break
 
                 # Tell the customer to try again
-                case '_':
+                case _:
                     print("I didn't understand your response, try again")
 
 # Print out the customer's order
@@ -200,35 +200,27 @@ print("Item name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
 
 # 6. Loop through the items in the customer's order
-for i in range(len(order_list)):
+for order in order_list:
      
     # 7. Store the dictionary items as variables
-        order_receipt = (len(order_list))
-        print(22)
+        price = order["Price"]
+        item_name = order["Item name"]
+        item_quantity = order["Quantity"]
+        
         
     # 8. Calculate the number of spaces for formatted printing
-
-
+        
+    
     # 9. Create space strings
-   
-"""
-    space
+        num_item_spaces = 26 -len(item_name)
+        item_spaces = " " * num_item_spaces
 
     # 10. Print the item name, price, and quantity
-
-    for key, value in menu[menu_category_name].items():
-    print("Item name", "Price", "Quantity")
-
+        print(f"{item_name}{item_spaces}| ${price}  | {item_quantity}")
+        
 # 11. Calculate the cost of the order using list comprehension
 # Multiply the price by quantity for each item in the order list, then sum()
-
-    total_cost_per_item =()
-    for price in order_list:
-        total_cost_per_item = (["Price"]*["Quantity"])
-
-    total_cost = sum(total_cost_per_item)
-        
+total_cost = (sum([float(order["Price"])* (float(order["Quantity"])) for order in order_list]))
         
 # and print the prices.
-    print(total_cost)
-    """
+print(f"The total cost is: ${total_cost}")
